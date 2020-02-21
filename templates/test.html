@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-     {% if title %}
-        <title>Home - {{ title }}</title>
-    {% else %}
-        <title>Home</title>
-    {% endif %}
-</head>
-<body>
-
-</body>
-</html>
+{% entends "layout.html" %}
+{% block content %}
+    <h1>Testing 1,2,3</h1>
+{% endblock content %}
