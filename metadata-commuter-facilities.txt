@@ -1,0 +1,61 @@
+# Metadata for Commuter Facilities (Bus and Taxi)
+---
+Identifier: 'e3450a49-4a9e-4e23-9d6d-906126e83fb6'
+Name: 'commuter-facilities'
+Title: 'Commuter Facilities (Bus and Taxi)'
+Description:
+  - 'All bus stops, bus interchanges, bus terminals, taxi stops & taxi stands in Singapore.'
+  - ''
+Topics:
+  - 'Infrastructure'
+  - 'Transport'
+Keywords:
+  - 'Buses'
+  - 'Commuter Facilities'
+  - 'Public Transport'
+  - 'Taxis'
+Publisher:
+  Name: 'Land Transport Authority'
+  Admin 1:
+    Name: 'Land Transport Authority'
+    Department: 'Land Transport Authority'
+    Email: 'Datamall@LTA.gov.sg'
+Sources:
+  - 'Land Transport Authority'
+License: 'https://data.gov.sg/open-data-licence'
+Frequency: 'Annual'
+Coverage: '2002-01-01 to 2013-12-31'
+Last Updated: '2017-06-07T03:44:32.768636'
+Resources:
+  -
+    Identifier: '2198da0e-e7fd-43f9-8b66-749255f430bf'
+    Title: 'Commuter Facilities'
+    Url: 'https://storage.data.gov.sg/commuter-facilities/resources/commuter-facilities-2017-05-05T07-34-09Z.csv'
+    Format: 'CSV'
+    Coverage: '2002-01-01 to 2013-12-31'
+    Description:
+      - 'All bus stops, bus interchanges, bus terminals, taxi stops & taxi stands
+        in Singapore.'
+      - ''
+      - 'Facilities include only those maintained by the Land Transport Authority
+        (LTA). Other road structures maintained by the LTA include culverts, retaining
+        walls, street lightings, etc'
+    Last Updated: '2017-05-05T07:34:09.132618'
+    Schema:
+      -
+        Name: 'year'
+        Title: 'Year'
+        Type: 'datetime'
+        Sub Type: 'year'
+        Format: 'YYYY'
+      -
+        Name: 'facility'
+        Title: 'Facility'
+        Type: 'text'
+        Sub Type: 'general'
+      -
+        Name: 'number'
+        Title: 'Number'
+        Type: 'numeric'
+        Sub Type: 'general'
+        Unit Of Measure: 'No. of Facilities'
