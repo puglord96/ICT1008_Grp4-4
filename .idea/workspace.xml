@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd54c784-d9ab-4582-b126-fa1b9fe0f7a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/layout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/test.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +69,7 @@
       <updated>1582261329859</updated>
       <workItem from="1582261349112" duration="1130000" />
       <workItem from="1582267205376" duration="5250000" />
-      <workItem from="1582273320784" duration="787000" />
+      <workItem from="1582273320784" duration="2169000" />
     </task>
     <servers />
   </component>
@@ -118,6 +117,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1582267205542" />
+    <state x="449" y="10" width="638" height="804" key="find.popup" timestamp="1582274929398">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="449" y="10" width="638" height="804" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1582274929398" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ICT1008_Grp4_4$ICT_1008_Shit.coverage" NAME="ICT 1008 Shit Coverage Results" MODIFIED="1582273885457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
