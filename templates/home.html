@@ -1,10 +1,28 @@
 {% extends "layout.html" %}
 {% block content %}
-    {% for post in posts %}
-        <div class="col-sm-6">
-            <h1>{{ post.title }}</h1>
-            <p>By {{ post.author }} on {{ post.date_posted }}</p>
-            <p>{{ post.content }}</p>
+
+    <form class="form-inline" id="form" action="">
+        {{ form.hidden_tag() }}
+
+            <legend class="border-bottom mb-4">Search for the path</legend>
+            <div class="form-group">
+                {{ form.BestPathChoice.label(class="form-control-label") }}
+                {{ form.BestPathChoice(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.MRTLocation.label(class="form-control-label") }}
+                {{ form.MRTLocation(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.HDBLocation.label(class="form-control-label") }}
+                {{ form.HDBLocation(class="form-control") }}
+            </div>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
         </div>
-    {% endfor %}
+    </form>
+    <br>
+    <div id="map" style="height: 250px;"></div>
+
+
 {% endblock content %}
