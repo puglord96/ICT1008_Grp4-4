@@ -6,7 +6,7 @@
   // {x} and {y} are the x/y of where you are on the map
   // {z} is the zoom level
   // {s} is the subdomain of cartodb
-    var layer = L.tileLayer('http://basemaps.cartocdn.com/light_all/11/1.402208/103.907128.png', {
+     var layer = L.tileLayer('http://basemaps.cartocdn.com/#13/1.40200/103.90730.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
     });
 
