@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import SelectField, SubmitField,Label
+from wtforms import SelectField, SubmitField, Label
 from wtforms.validators import DataRequired
 import csv, urllib
 
@@ -16,11 +16,13 @@ with open('datasets/punggol-hdb-latlong.csv') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
 
     for row in csv_reader:
-        HDBBlocks.append((row[0], row[1].split(",")))
+        HDBBlocks.append((row[0], row[1]))
 
 
 class MapForm(FlaskForm):
-    BestPathChoice = SelectField('Type of Best Path', choices=[('fast', 'Fastest Route'), ('short', 'Shortest Route')],
+    BestPathChoice = SelectField('Type of Best Path', choices=[(0, 'Choose type of Path...'), ('fast', 'Fastest Route'),
+                                                               ('short', 'Shortest Route'),
+                                                               ('cheap', 'Cheapest Route')],
                                  validators=[DataRequired()])
     MRTLocation = SelectField('MRT/LRT Station', choices=[(station[0], station[1]) for station in MRTLRTStations],
                               validators=[DataRequired()])

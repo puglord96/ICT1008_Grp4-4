@@ -1,15 +1,16 @@
-PTC,Punggol
-PE1,Cove
-PE2,Meridian
-PE3,Coral Edge
-PE4,Riviera
-PE5,Kadaloor
-PE6,Oasis
-PE7,Damai
-PW1,Sam Kee
-PW2,Teck Lee
-PW3,Punggol Point
-PW4,Samudera
-PW5,Nibong
-PW6,Sumang
-PW7,Soo Teck
+0,Please select a station…
+"1.4051700,103.9023559",Punggol
+"1.398111, 103.905725",Cove
+"1.3968422,103.9089515",Meridian
+"1.3937681,103.9126883",Coral Edge
+"1.3944756,103.9160771",Riviera
+"1.3995025,103.9165279",Kadaloor
+"1.4023045,103.9127361",Oasis
+"1.4051,103.9086",Damai
+"1.4097548,103.9048987",Sam Kee
+"1.4127696,103.9065726",Teck Lee
+"1.4168786,103.9066696",Punggol Point
+"1.4159125,103.9021743",Samudera
+"1.4118539,103.9003211",Nibong
+"1.408057, 103.898527",Sumang
+"1.4044943,103.8970444",Soo Teck

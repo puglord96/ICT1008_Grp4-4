@@ -1,14 +1,30 @@
- // The first parameter are the coordinates of the center of the map
-  // The second parameter is the zoom level
-  var map = L.map('map').setView([1.402208, 103.907128], 11);
-    L.map('map').setView([1.402208, 103.907128], 11);
-  // {s}, {z}, {x} and {y} are placeholders for map tiles
-  // {x} and {y} are the x/y of where you are on the map
-  // {z} is the zoom level
-  // {s} is the subdomain of cartodb
-     var layer = L.tileLayer('http://basemaps.cartocdn.com/#13/1.40200/103.90730.png', {
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
-    });
 
-    // Now add the layer onto the map
-    map.addLayer(layer);
+//For the MapBox API functionality
+mapboxgl.accessToken = 'pk.eyJ1IjoianNvbWEiLCJhIjoibFJmYl9JWSJ9.AUm8d76cbOvVEn2mMeG_ZA';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v9',
+    center:[103.9072,1.3984],
+    zoom : 15
+  });
+  map.on('load', function() {
+    var geojsonData = {
+      "type": "FeatureCollection",
+      "features": [{
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [0, 0]
+        }
+      }]
+    };
+    map.addLayer({
+      "id": "points",
+      "type": "circle",
+      "source": {
+        "type": "geojson",
+        "data": geojsonData
+      }
+    })
+  });
+
