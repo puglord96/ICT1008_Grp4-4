@@ -10,13 +10,22 @@ mapboxgl.accessToken = 'pk.eyJ1IjoianNvbWEiLCJhIjoibFJmYl9JWSJ9.AUm8d76cbOvVEn2m
   map.on('load', function() {
     var geojsonData = {
       "type": "FeatureCollection",
-      "features": [{
+      "features": [
+      {
         "type": "Feature",
         "geometry": {
           "type": "Point",
-          "coordinates": [0, 0]
+          "coordinates": [103.9072,1.3984]
         }
-      }]
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [103.8984397,1.4090686]
+        }
+      }
+      ]
     };
     map.addLayer({
       "id": "points",

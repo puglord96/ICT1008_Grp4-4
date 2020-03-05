@@ -19,6 +19,7 @@ with open('datasets/punggol-hdb-latlong.csv') as csv_file:
         HDBBlocks.append((row[0], row[1]))
 
 
+
 class MapForm(FlaskForm):
     BestPathChoice = SelectField('Type of Best Path', choices=[(0, 'Choose type of Path...'), ('fast', 'Fastest Route'),
                                                                ('short', 'Shortest Route'),

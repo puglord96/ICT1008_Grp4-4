@@ -11,12 +11,13 @@ app.config['SECRET_KEY'] = '4cfbdadf2d991953407bb0942aa37e3a'
 @app.route('/')
 def home_page():
     form = MapForm()
+    arr = [];
     BestPathChoice = request.args.get('BestPathChoice')
     MRTLRTLocation = request.args.get('MRTLocation')
     HDBLocation = request.args.get('HDBLocation')
 
     return render_template('home.html', form=form, methods=['GET'], path=BestPathChoice, station=MRTLRTLocation,
-                           hdb=HDBLocation)
+                           hdb=HDBLocation,array = arr)
 
 
 
