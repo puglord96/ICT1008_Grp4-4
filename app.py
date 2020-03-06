@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify, url_for
-from form import MapForm
+from form import MapForm, geoDict, geoDict2, LLTest
 from config import Config
 
 app = Flask(__name__)
@@ -14,9 +14,11 @@ def home_page():
     BestPathChoice = request.args.get('BestPathChoice')
     MRTLRTLocation = request.args.get('MRTLocation')
     HDBLocation = request.args.get('HDBLocation')
+    data = geoDict2
+    print(geoDict2)
 
     return render_template('home.html', form=form, methods=['GET'], path=BestPathChoice, station=MRTLRTLocation,
-                           hdb=HDBLocation)
+                           hdb=HDBLocation, data=data)
 
 
 
@@ -26,4 +28,4 @@ def hello_world():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

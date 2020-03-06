@@ -2,9 +2,12 @@ from flask_wtf import FlaskForm
 from wtforms import SelectField, SubmitField, Label
 from wtforms.validators import DataRequired
 import csv, urllib
+import json
 
 MRTLRTStations = []
 HDBBlocks = []
+latlong = []
+geoDict = []
 
 with open('datasets/Punggol LRT Stations.csv') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
@@ -17,8 +20,26 @@ with open('datasets/punggol-hdb-latlong.csv') as csv_file:
 
     for row in csv_reader:
         HDBBlocks.append((row[0], row[1]))
+        coordinates = row[1].split(',')
+        lat = coordinates[0]
+        long = coordinates[-1]
+        newCoordinates = [long + "," + lat]
+        latlong.append(newCoordinates)
+
+for LL in latlong:
+    geojsonData = {"type": "Feature", "geometry": {"type": "Point", "coordinates": LL}}
+    geoDict.append(geojsonData)
+
+    # print(g)
+geoDict2 = [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [103.8998, 1.4075]}}]
+#print(geoDict2)
+#appJson = json.dumps(geoDict2)
+#print(appJson)
+
+LLTest = [103.8998, 1.4075]
 
 
+# geojsonData = {"type": "Feature", "geometry": {"type": "Point", "coordinates": latlong}}
 
 class MapForm(FlaskForm):
     BestPathChoice = SelectField('Type of Best Path', choices=[(0, 'Choose type of Path...'), ('fast', 'Fastest Route'),

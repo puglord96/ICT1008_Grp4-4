@@ -1,4 +1,5 @@
 //For the MapBox API functionality
+alert(data[0]);
 mapboxgl.accessToken = 'pk.eyJ1IjoianNvbWEiLCJhIjoibFJmYl9JWSJ9.AUm8d76cbOvVEn2mMeG_ZA';
 var map = new mapboxgl.Map({
     container: 'map',
@@ -6,6 +7,12 @@ var map = new mapboxgl.Map({
     center: [midArray[1], midArray[0]],
     zoom: 15
 });
+var test = {"type": "Feature", "geometry": {"type": "Point", "coordinates": [103.8998, 1.4075]}}
+console.log(test);
+console.log(data);
+var d = d.replace("&#39","," );
+//var d2 = decodeURI(data);
+console.log(d);
 
 map.on('load', function () {
     var geojsonData = {
@@ -25,6 +32,14 @@ map.on('load', function () {
                     "coordinates": [103.8984397, 1.4090686]
                 }
             },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [103.8998, 1.4075]
+                }
+            },
+            //data
 
         ]
     };
@@ -68,4 +83,3 @@ map.on('load', function () {
 
 
 });
-
