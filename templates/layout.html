@@ -42,14 +42,14 @@
            var hdb = "{{ hdb }}";
            var mrt = "{{ station }}";
            var data= {{ data }};
-           var midarray = [];
+           var midArray, destArray;
 
 
         $("#BestPathChoice").val("{{ path }}");
         $("#MRTLocation").val(mrt);
         $("#HDBLocation").val(hdb);
 
-
+    {#alert(hdb == "None");#}
     //If no selection of MRT station made, default map center will take coordinates of punggol
         if(mrt === "None"){
             midArray = [1.3984,103.9072];
@@ -57,6 +57,13 @@
              midArray = mrt.split(",");
         }
 
+        if(hdb === "None"){
+            destArray = "";
+        }else{
+            destArray = hdb.split(",");
+        }
+
+        alert(hdb);
     </script>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

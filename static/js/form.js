@@ -1,9 +1,9 @@
 //For the MapBox API functionality
 
-mapboxgl.accessToken = 'pk.eyJ1IjoianNvbWEiLCJhIjoibFJmYl9JWSJ9.AUm8d76cbOvVEn2mMeG_ZA';
+mapboxgl.accessToken = 'pk.eyJ1IjoicHVnbG9yZDk2IiwiYSI6ImNrN2hjMm5oMzA4eGIzaW4weXFtdHZsaGYifQ._xqaM8Rf9EwMYW-xzqgmBg';
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v9',
+    style: 'mapbox://styles/puglord96/ck7hc4ku10yq21ilv13yz3aif',
     center: [midArray[1], midArray[0]],
     zoom: 15
 });
@@ -23,38 +23,97 @@ function style(feature) {
 
 var arrayLength = data.length;
 map.on('load', function () {
-      var geojson = {
+    var geojson = {
         "type": "FeatureCollection",
         features: []
-};
+    };
 
-    for (var m = 0; m < arrayLength; m++){
+    for (var m = 0; m < arrayLength; m++) {
 
-    geojson.features.push({
-        "type": "Feature",
-        "geometry":{
-            //"type": "Point",
-            "coordinates": data[m]
-        },
-    });
+
+        
+
+        geojson.features.push({
+            "type": "Feature",
+            "geometry": {
+                //"type": "Point",
+                "coordinates": data[m]
+            },
+        });
 
     }
 
-   geojson.features.forEach(function(marker) {
+    geojson.features.forEach(function (marker) {
         // create a HTML element for each feature
-      var el = document.createElement('div');
-      el.className = 'marker';
-      // make a marker for each feature and add to the map
-      new mapboxgl.Marker(el)
-        .setLngLat(marker.geometry.coordinates)
-        .addTo(map);
+        var el = document.createElement('div');
+        el.className = 'marker';
+        // make a marker for each feature and add to the map
+        new mapboxgl.Marker(el)
+            .setLngLat(marker.geometry.coordinates)
+            .addTo(map);
     });
+
+
+    var start = {
+        type: 'FeatureCollection',
+        features: [{
+            type: 'Feature',
+            geometry: {
+                type: 'Point',
+                coordinates: [midArray[1], midArray[0]]
+            },
+            properties: {
+                title: 'start',
+                description: 'Washington, D.C.'
+            }
+        }]
+    };
+
+    start.features.forEach(function(marker) {
+
+  // create a HTML element for each feature
+  var el = document.createElement('div');
+  el.className = 'marker1';
+
+  // make a marker for each feature and add to the map
+  new mapboxgl.Marker(el)
+    .setLngLat(marker.geometry.coordinates)
+    .addTo(map);
+});
+
+     var end = {
+        type: 'FeatureCollection',
+        features: [{
+            type: 'Feature',
+            geometry: {
+                type: 'Point',
+                coordinates: [destArray[1], destArray[0]]
+            },
+            properties: {
+                title: 'end',
+                description: 'Washington, D.C.'
+            }
+        }]
+    };
+
+    end.features.forEach(function(marker) {
+
+  // create a HTML element for each feature
+  var el = document.createElement('div');
+  el.className = 'marker1';
+
+  // make a marker for each feature and add to the map
+  new mapboxgl.Marker(el)
+    .setLngLat(marker.geometry.coordinates)
+    .addTo(map);
+});
+
 
     map.addSource('route', {
         'type': 'geojson',
         'data': {
             'type': 'Feature',
-            'properties': {color:"#ffffff"},
+            'properties': {color: "#ffffff"},
             'geometry': {
                 'type': 'LineString',
                 'coordinates': [
@@ -64,14 +123,7 @@ map.on('load', function () {
             }
         }
     });
-    map.addLayer({
-        "id": "points",
-        "type": "circle",
-        "source": {
-            "type": "geojson",
-            "data": geojson
-        }
-    });
+
 
     map.addLayer({
         'id': 'route',
