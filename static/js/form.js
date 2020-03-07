@@ -1,5 +1,5 @@
 //For the MapBox API functionality
-alert(data[0]);
+
 mapboxgl.accessToken = 'pk.eyJ1IjoianNvbWEiLCJhIjoibFJmYl9JWSJ9.AUm8d76cbOvVEn2mMeG_ZA';
 var map = new mapboxgl.Map({
     container: 'map',
@@ -7,48 +7,54 @@ var map = new mapboxgl.Map({
     center: [midArray[1], midArray[0]],
     zoom: 15
 });
-var test = {"type": "Feature", "geometry": {"type": "Point", "coordinates": [103.8998, 1.4075]}}
-console.log(test);
-console.log(data);
-var d = d.replace("&#39","," );
-//var d2 = decodeURI(data);
-console.log(d);
 
+function style(feature) {
+    return {
+        color: '#06406F',
+        opacity: 1,
+        fillColor: '#DDDDFF',
+        fillOpacity: 0.9,
+        weight: 3,
+        radius: 6,
+        clickable: true
+    }
+}
+
+
+var arrayLength = data.length;
 map.on('load', function () {
-    var geojsonData = {
+      var geojson = {
         "type": "FeatureCollection",
-        "features": [
-            {
-                "type": "Feature",
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [103.9072, 1.3984]
-                }
-            },
-            {
-                "type": "Feature",
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [103.8984397, 1.4090686]
-                }
-            },
-            {
-                "type": "Feature",
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [103.8998, 1.4075]
-                }
-            },
-            //data
+        features: []
+};
 
-        ]
-    };
+    for (var m = 0; m < arrayLength; m++){
+
+    geojson.features.push({
+        "type": "Feature",
+        "geometry":{
+            //"type": "Point",
+            "coordinates": data[m]
+        },
+    });
+
+    }
+
+   geojson.features.forEach(function(marker) {
+        // create a HTML element for each feature
+      var el = document.createElement('div');
+      el.className = 'marker';
+      // make a marker for each feature and add to the map
+      new mapboxgl.Marker(el)
+        .setLngLat(marker.geometry.coordinates)
+        .addTo(map);
+    });
 
     map.addSource('route', {
         'type': 'geojson',
         'data': {
             'type': 'Feature',
-            'properties': {},
+            'properties': {color:"#ffffff"},
             'geometry': {
                 'type': 'LineString',
                 'coordinates': [
@@ -63,7 +69,7 @@ map.on('load', function () {
         "type": "circle",
         "source": {
             "type": "geojson",
-            "data": geojsonData
+            "data": geojson
         }
     });
 

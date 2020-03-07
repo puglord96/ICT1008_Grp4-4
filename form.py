@@ -3,11 +3,16 @@ from wtforms import SelectField, SubmitField, Label
 from wtforms.validators import DataRequired
 import csv, urllib
 import json
-
+import basehash
 MRTLRTStations = []
 HDBBlocks = []
 latlong = []
 geoDict = []
+longCoordinates = []
+
+type = "type"
+
+
 
 with open('datasets/Punggol LRT Stations.csv') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
@@ -23,18 +28,24 @@ with open('datasets/punggol-hdb-latlong.csv') as csv_file:
         coordinates = row[1].split(',')
         lat = coordinates[0]
         long = coordinates[-1]
-        newCoordinates = [long + "," + lat]
+        longCoordinates.append(long)
+        newCoordinates = [float(long), float(lat)]
         latlong.append(newCoordinates)
 
-for LL in latlong:
-    geojsonData = {"type": "Feature", "geometry": {"type": "Point", "coordinates": LL}}
-    geoDict.append(geojsonData)
+    #geojsonData = {"type": "Feature", "geometry": {"type": "Point", "coordinates": LL}}
+    #geoDict.append(geojsonData)
 
     # print(g)
-geoDict2 = [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [103.8998, 1.4075]}}]
-#print(geoDict2)
-#appJson = json.dumps(geoDict2)
-#print(appJson)
+geoDict2 = [{type: "Feature", "geometry": {"type": "Point", "coordinates": [103.8998, 1.4075]}}]
+print(geoDict2)
+appJson = json.dumps(geoDict2)
+print(appJson)
+
+value = float(103.9128130)
+value2 = float(1.4075)
+
+
+
 
 LLTest = [103.8998, 1.4075]
 
