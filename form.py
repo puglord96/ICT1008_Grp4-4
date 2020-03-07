@@ -3,7 +3,7 @@ from wtforms import SelectField, SubmitField, Label
 from wtforms.validators import DataRequired
 import csv, urllib
 import json
-import basehash
+#import basehash
 MRTLRTStations = []
 HDBBlocks = []
 latlong = []

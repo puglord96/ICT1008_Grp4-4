@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify, url_for
 from form import MapForm, geoDict, geoDict2, LLTest, appJson, latlong,longCoordinates, newCoordinates, value, value2
-from config import Config
+#from config import Config
 
 app = Flask(__name__)
 
