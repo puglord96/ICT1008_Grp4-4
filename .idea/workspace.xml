@@ -2,8 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd54c784-d9ab-4582-b126-fa1b9fe0f7a0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/marker.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/marker.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/marker.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/markerOrange.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/markerRed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/marker_orange.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/punggol-hdb-latlong.csv" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/punggol-hdb-latlong.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/form.py" beforeDir="false" afterPath="$PROJECT_DIR$/form.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/main.css" afterDir="false" />
+>>>>>>> cd5321b1e2480d000304455e422a54f1ba8bf56d
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,17 +54,40 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Koh Boon Kiat\Documents\GitHub\ICT_1004_Backup\ICT1008_Grp4-4_Project_BK\static" />
+      <recent name="C:\Users\Koh Boon Kiat\Documents\GitHub\ICT_1004_Backup\ICT1008_Grp4-4_Project_BK" />
+      <recent name="C:\Users\Koh Boon Kiat\Documents\GitHub\ICT_1004_Backup\ICT1008_Grp4-4_Project_BK\image" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Wong Leng Fook\Documents\GitHub\ICT1008_Grp4-4\static\js" />
       <recent name="C:\Users\Wong Leng Fook\Documents\GitHub\ICT1008_Grp4-4\static" />
     </key>
   </component>
-  <component name="RunManager" selected="Flask server.ICT 1008 Shit">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Flask server.Flask (app.py)">
     <configuration name="form" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ICT 1008 Shit" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -69,6 +108,21 @@
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Flask (app.py)" type="Python.FlaskServer" nameIsGenerated="true">
+      <module name="ICT 1008 Shit" />
+      <option name="target" value="$PROJECT_DIR$/app.py" />
+      <option name="targetType" value="PATH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
       <method v="2" />
     </configuration>
     <configuration name="ICT 1008 Shit" type="Python.FlaskServer">
@@ -110,15 +164,47 @@
       <workItem from="1582443728252" duration="9189000" />
       <workItem from="1582531982933" duration="228000" />
       <workItem from="1583248955655" duration="1105000" />
+<<<<<<< HEAD
       <workItem from="1583382575905" duration="9355000" />
+=======
+      <workItem from="1583382575905" duration="8574000" />
+      <workItem from="1583412429231" duration="7505000" />
+      <workItem from="1583456959624" duration="10214000" />
+      <workItem from="1583474502756" duration="4801000" />
+      <workItem from="1583505727792" duration="11695000" />
+      <workItem from="1583539324098" duration="12305000" />
     </task>
+    <task id="LOCAL-00001" summary="new update">
+      <created>1583480650841</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1583480650841</updated>
+>>>>>>> cd5321b1e2480d000304455e422a54f1ba8bf56d
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="new update" />
+    <option name="LAST_COMMIT_MESSAGE" value="new update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583385044020">
@@ -180,8 +266,10 @@
     <state x="449" y="10" width="638" height="804" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1582355164435" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ICT1008_Grp4_4$ICT_1008_Shit.coverage" NAME="ICT 1008 Shit Coverage Results" MODIFIED="1583384545691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ICT_1008_Shit$ICT_1008_Shit.coverage" NAME="ICT 1008 Shit Coverage Results" MODIFIED="1582269144615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/ICT1008_Grp4_4$form.coverage" NAME="form Coverage Results" MODIFIED="1583383105146" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ICT_1008_Shit$ICT_1008_Shit.coverage" NAME="ICT 1008 Shit Coverage Results" MODIFIED="1582269144615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/ICT1008_Grp4_4$ICT_1008_Shit.coverage" NAME="ICT 1008 Shit Coverage Results" MODIFIED="1583384545691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ICT1008_Grp4_4_Project_BK$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1583554932375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/ICT1008_Grp4_4_Project_BK$form.coverage" NAME="form Coverage Results" MODIFIED="1583509014990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
