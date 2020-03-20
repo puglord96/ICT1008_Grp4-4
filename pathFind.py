@@ -4,7 +4,7 @@ import pandas as pd
 import heapq
 from math import cos, asin, sqrt
 
-#read requireced data from json files
+#read required data from files
 nodesData = pd.read_json(path_or_buf="datasets/nodesData.json")
 edgesData = pd.read_json(path_or_buf="datasets/edgesData.json")
 
@@ -23,7 +23,6 @@ def loadEdges(G):
     gdf_edges = ox.graph_to_gdfs(G, nodes=False, fill_edge_geometry=True) 
     edgesData = pd.DataFrame(gdf_edges[["u", "v", "osmid"]].values, columns=["U", "V", "Edges"])
 
-
 def loadNodes(G):
     """
     G - NetworkX Digraph
@@ -32,11 +31,6 @@ def loadNodes(G):
     #all possible nodes within punggol
     coords = [[node, data['x'], data['y']] for node, data in G.nodes(data=True)]
     nodesData = pd.DataFrame(coords, columns=['node', 'x', 'y'])
-
-"""
-Average walking speed = 5km/h
-Average drive speed = 64km/h
-"""
 
 class Node:
     """
@@ -72,20 +66,27 @@ class Node:
         return self.f > other.f
     #returns own OSMID/Node ID of node by searching position in nodesData
     def getID(self):
-        if(self.position is not None):
-            row = nodesData[(nodesData['X'] == self.position[0]) & (nodesData['Y'] == self.position[1])]
-            self.ID = row.Node_ID.item()
-            return row.Node_ID.item()
-    #return a list of possible movement to that node's ID
+        try:
+            if(self.position is not None):
+                row = nodesData[(nodesData['X'] == self.position[0]) & (nodesData['Y'] == self.position[1])]
+                self.ID = row.Node_ID.item()
+                return row.Node_ID.item()
+        except ValueError:
+            print("ID Error - No coordinates match within files")
+            return None
+    #return a list of possible movement from current node
     def possibleMoves(self):
         row = edgesData[edgesData["U"] == self.getID()]
         return row.V.values
 
 #takes in return path and plots it within osmnx
-def plotPath(path):
+def plotPath(path, folium=False):
     G = loadPunggol()
+    if folium is True:
+        #save file as folium HTML file to view actual plot
+        ox.plot_route_folium(G, path, tiles='openstreetmap').save("test.html")
     ox.plot_graph_route(G, path)
-
+    
 def returnPath(currentNode, output="coords"):
     """
     Returns the list of node ID or coords that can reach the end point
@@ -110,12 +111,16 @@ def returnPath(currentNode, output="coords"):
         return Coords[::-1]
 
 
-def search(start, end, output="graph"):
+def search(start, end, output="coords"):
     """
+    output - ID (path of OSMID), graph (generate network X graph), coords (list of tuples of lat and long)
     start - Starting position tuple (Longitude, Latitude)
     end - Ending position tuple (Longitude, Latitude)
     Pass final node into returnPath() to determine best path
     """
+    #check that these coordinates exist within the dataset, return nearest node within dataset
+    start = checkNodes(start)
+    end = checkNodes(end)
     #initialize start, current and end nodes
     startNode = Node(position=start)
     startNode.g = startNode.h = startNode.f = 0
@@ -154,7 +159,10 @@ def search(start, end, output="graph"):
             #child already visited, skip
             if skipNode(child, traversedList) == -1:
                 continue
-            child.g = currentNode.g + 1
+            #set up fgh values for child
+            #1.5m/s is the average walking speed
+            child.g = currentNode.g + (1/1.5) # reciprocal of average walking speed (1/avg walk spd)
+            #distance from start to current node
             child.h = haversine(startNode.getLat(), startNode.getLon(), child.getLat(), child.getLon())
             child.f = child.g + child.h
             #child already noted, skip
@@ -185,12 +193,28 @@ def skipNode(node, listOfNodes):
             return -1
     return 0
 
+#checks if the nodes exist within the walking dataset, if not, get the nearest node
+def checkNodes(coords):
+    """
+    coords - tuple of coordinates to get nearest nodes
+    returns coordinates of nearest node within dataset
+    """
+    tempCoords = []
+    tempHav = []
+    for row in nodesData.values:
+        tempHav.append(haversine(coords[0], coords[1], row[1], row[2]))
+        tempCoords.append((row[1], row[2]))
+    val, idx = min((val, idx) for (idx, val) in enumerate(tempHav))
+    return tempCoords[idx]
+    
+
 """
 test parameters
 """
 #test start - 98 punggol walk
-tempstart = (103.8983854, 1.4012395)
+#tempstart = (103.8983854, 1.4012395)
 #test end - punggol rd
-tempend = (103.9057549, 1.401378)
-print(search(tempstart, tempend))
-
+#tempend = (103.9057549, 1.401378)
+tempstart = (103.9156265, 1.3947758)
+tempend = (103.9160709, 1.4031447)
+print(search(tempstart, tempend, output="coords"))
