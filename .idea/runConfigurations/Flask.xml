@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Flask (app:app)" type="Python.FlaskServer" nameIsGenerated="true">
+  <configuration default="false" name="Flask" type="Python.FlaskServer" nameIsGenerated="true">
     <option name="additionalOptions" value="--host=127.0.0.1 --port=1234" />
     <option name="application" value="app" />
     <option name="flaskDebug" value="true" />
@@ -11,7 +11,7 @@
     <envs>
       <env name="PYTHONUNBUFFERED " value=" 1" />
     </envs>
-    <option name="SDK_HOME" value="D:\python\python.exe" />
+    <option name="SDK_HOME" value="C:\Program Files (x86)\Python\python.exe" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     <option name="IS_MODULE_SDK" value="false" />
     <option name="ADD_CONTENT_ROOTS" value="true" />
