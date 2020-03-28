@@ -31,19 +31,22 @@ def home_page():
 
     pathArray = search(startarr, endarr, output="coords")
 
-    latlong2 = []
+    latlong = []
 
     for row in pathArray:
         lat = row[1]
         long = row[0]
         newCoordinates = [float(long), float(lat)]
-        latlong2.append(newCoordinates)
+        latlong.append(newCoordinates)
+
+    latlong.insert(0,startarr)
+    latlong.append(endarr)
+    print(startarr)
+    print(endarr)
+    print(latlong)
 
 
-    print(latlong2)
-
-
-    data = latlong2
+    data = latlong
     #print(latlong)
     #print("here")
     #cleanData(data)
