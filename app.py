@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, jsonify, url_for
-from form import MapForm, geoDict, geoDict2, LLTest, appJson,longCoordinates, newCoordinates, value, value2
-from pathFind import search
+from form import MapForm
+import pathFind,busFind
+
 
 #from config import Config
 
@@ -29,7 +30,9 @@ def home_page():
     else:
         endarr = (103.9160709, 1.4031447)
 
-    pathArray = search(startarr, endarr, output="coords")
+    pathArray = pathFind.search(startarr, endarr, output="coords")
+
+    testArray = busFind.search(startarr, endarr, output="coords")
 
     latlong = []
 
@@ -41,10 +44,10 @@ def home_page():
 
     latlong.insert(0,startarr)
     latlong.append(endarr)
-    print(startarr)
-    print(endarr)
-    print(latlong)
-
+    #print(startarr)
+    #print(endarr)
+    #print(latlong)
+    print(testArray)
 
     data = latlong
     #print(latlong)
@@ -54,12 +57,6 @@ def home_page():
 
     return render_template('home.html', form=form, methods=['GET'], path=BestPathChoice, station=MRTLRTLocation,
                            hdb=HDBLocation, data=data)
-
-
-
-@app.route('/test')
-def hello_world():
-    return render_template('test.html', title='About')
 
 
 

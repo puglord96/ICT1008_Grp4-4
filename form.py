@@ -62,9 +62,9 @@ LLTest = [103.8998, 1.4075]
 # geojsonData = {"type": "Feature", "geometry": {"type": "Point", "coordinates": latlong}}
 
 class MapForm(FlaskForm):
-    BestPathChoice = SelectField('Type of Best Path', choices=[(0, 'Choose type of Path...'), ('fast', 'Fastest Route'),
-                                                               ('short', 'Shortest Route'),
-                                                               ('cheap', 'Cheapest Route')],
+    BestPathChoice = SelectField('Method of Travel', choices=[(0, 'Choose type of Path...'), ('walk', 'Walking the street'),
+                                                               ('bus', 'Bus'),
+                                                               ('mrt', 'Mrt')],
                                  validators=[DataRequired()])
     MRTLocation = SelectField('MRT/LRT Station', choices=[(station[0], station[1]) for station in MRTLRTStations],
                               validators=[DataRequired()])
