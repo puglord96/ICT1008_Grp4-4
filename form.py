@@ -1,17 +1,22 @@
 from flask_wtf import FlaskForm
 from wtforms import SelectField, SubmitField, Label
 from wtforms.validators import DataRequired
+from pathFind import search
 import csv, urllib
 import json
 #import basehash
 MRTLRTStations = []
 HDBBlocks = []
 latlong = []
+
 geoDict = []
 longCoordinates = []
 
 type = "type"
 
+tempstart = (103.9156265, 1.3947758)
+tempend = (103.9160709, 1.4031447)
+pathArray = search(tempstart, tempend, output="coords")
 
 
 with open('datasets/Punggol LRT Stations.csv') as csv_file:
@@ -28,18 +33,22 @@ with open('datasets/punggol-hdb-latlong.csv') as csv_file:
         coordinates = row[1].split(',')
         lat = coordinates[0]
         long = coordinates[-1]
-        longCoordinates.append(long)
         newCoordinates = [float(long), float(lat)]
         latlong.append(newCoordinates)
+
+
+
+
+print(latlong)
 
     #geojsonData = {"type": "Feature", "geometry": {"type": "Point", "coordinates": LL}}
     #geoDict.append(geojsonData)
 
     # print(g)
 geoDict2 = [{type: "Feature", "geometry": {"type": "Point", "coordinates": [103.8998, 1.4075]}}]
-print(geoDict2)
+#print(geoDict2)
 appJson = json.dumps(geoDict2)
-print(appJson)
+#print(appJson)
 
 value = float(103.9128130)
 value2 = float(1.4075)

@@ -29,10 +29,6 @@ map.on('load', function () {
     };
 
     for (var m = 0; m < arrayLength; m++) {
-
-
-        
-
         geojson.features.push({
             "type": "Feature",
             "geometry": {
@@ -88,10 +84,6 @@ map.on('load', function () {
             geometry: {
                 type: 'Point',
                 coordinates: [destArray[1], destArray[0]]
-            },
-            properties: {
-                title: 'end',
-                description: 'Washington, D.C.'
             }
         }]
     };
@@ -118,7 +110,8 @@ map.on('load', function () {
                 'type': 'LineString',
                 'coordinates': [
                     [103.9072, 1.3984],
-                    [103.8984397, 1.4090686]
+                    [103.8984397, 1.4090686],
+                    [103.9158001,1.3945725]
                 ]
             }
         }

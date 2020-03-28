@@ -217,4 +217,4 @@ test parameters
 #tempend = (103.9057549, 1.401378)
 tempstart = (103.9156265, 1.3947758)
 tempend = (103.9160709, 1.4031447)
-print(search(tempstart, tempend, output="coords"))
+#print(search(tempstart, tempend, output="coords"))
