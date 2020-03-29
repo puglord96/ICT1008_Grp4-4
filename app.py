@@ -32,22 +32,29 @@ def home_page():
 
     pathArray = pathFind.search(startarr, endarr, output="coords")
 
+<<<<<<< HEAD
 
     busArray = busFind.search(startarr, endarr, output="coords")
+=======
+    testArray = busFind.search(startarr, endarr, output="coords")
+>>>>>>> parent of 518218a... Added travelling by bus method and node color
 
     latlong2 = []
 
     latlong = []
-    busStr = "The buses you can take is: "
 
+<<<<<<< HEAD
 
     # if BestPathChoice == "walk":
+=======
+>>>>>>> parent of 518218a... Added travelling by bus method and node color
     for row in pathArray:
         lat = row[1]
         long = row[0]
         newCoordinates = [float(long), float(lat)]
         latlong2.append(newCoordinates)
 
+<<<<<<< HEAD
     if BestPathChoice == "bus":
         print(startarr)
         print(endarr)
@@ -64,12 +71,14 @@ def home_page():
 
     #print (busStr)
 
+=======
+>>>>>>> parent of 518218a... Added travelling by bus method and node color
     latlong.insert(0,startarr)
     latlong.append(endarr)
     #print(startarr)
     #print(endarr)
     #print(latlong)
-    #print(busArray)
+    print(testArray)
 
 
     print(latlong2)
@@ -86,7 +95,7 @@ def home_page():
     #print(geoDict2)
 
     return render_template('home.html', form=form, methods=['GET'], path=BestPathChoice, station=MRTLRTLocation,
-                           hdb=HDBLocation, data=data,busServices = busStr)
+                           hdb=HDBLocation, data=data)
 
 
 

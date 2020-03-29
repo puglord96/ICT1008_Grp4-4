@@ -57,6 +57,10 @@ map.on('load', function () {
             geometry: {
                 type: 'Point',
                 coordinates: [midArray[1], midArray[0]]
+            },
+            properties: {
+                title: 'start',
+                description: 'Washington, D.C.'
             }
         }]
     };
@@ -88,7 +92,7 @@ map.on('load', function () {
 
   // create a HTML element for each feature
   var el = document.createElement('div');
-  el.className = 'marker2';
+  el.className = 'marker1';
 
   // make a marker for each feature and add to the map
   new mapboxgl.Marker(el)

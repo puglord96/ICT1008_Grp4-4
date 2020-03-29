@@ -171,20 +171,19 @@ def search(start, end, output="graph"):
             children.append(newNode)
         #consider possible paths generated from children
         for child in children:
-            # bus service unavailable in final node, skip
+            #bus service unavailable in final node, skip
             endServices = endNode.services.split(',')
             childServices = child.services.split(',')
             servicesCheck = list(set(endServices).intersection(childServices))
-            # child already visited, skip
+            if len(servicesCheck) <= 0:
+                continue
+            #child already visited, skip
             if skipNode(child, traversedList) == -1:
                 continue
-            if len(servicesCheck) > 0:
-                child.g = (1 / 50)  # set higher priority for buses that have end service
-            else:
-                child.g = currentNode.g + (1 / 28)  # Average bus speed is 28km/h
+            child.g = currentNode.g + (1/28) # Average bus speed is 28km/h
             child.h = haversine(startNode.getLat(), startNode.getLon(), child.getLat(), child.getLon())
             child.f = child.g + child.h
-            # child already noted, skip
+            #child already noted, skip
             if skipNode(child, untraversedList) == -1:
                 continue
             # Add the child to list to travel to
