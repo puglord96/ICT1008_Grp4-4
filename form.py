@@ -39,9 +39,6 @@ with open('datasets/punggol-hdb-latlong.csv') as csv_file:
 
 
 
-#print(latlong)
-
-
 
 class MapForm(FlaskForm):
     BestPathChoice = SelectField('Method of Travel', choices=[(0, 'Choose type of Path...'), ('walk', 'Walking the street'),
