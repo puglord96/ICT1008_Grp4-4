@@ -39,27 +39,9 @@ with open('datasets/punggol-hdb-latlong.csv') as csv_file:
 
 
 
-print(latlong)
-
-    #geojsonData = {"type": "Feature", "geometry": {"type": "Point", "coordinates": LL}}
-    #geoDict.append(geojsonData)
-
-    # print(g)
-geoDict2 = [{type: "Feature", "geometry": {"type": "Point", "coordinates": [103.8998, 1.4075]}}]
-#print(geoDict2)
-appJson = json.dumps(geoDict2)
-#print(appJson)
-
-value = float(103.9128130)
-value2 = float(1.4075)
+#print(latlong)
 
 
-
-
-LLTest = [103.8998, 1.4075]
-
-
-# geojsonData = {"type": "Feature", "geometry": {"type": "Point", "coordinates": latlong}}
 
 class MapForm(FlaskForm):
     BestPathChoice = SelectField('Method of Travel', choices=[(0, 'Choose type of Path...'), ('walk', 'Walking the street'),

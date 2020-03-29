@@ -32,22 +32,40 @@ def home_page():
 
     pathArray = pathFind.search(startarr, endarr, output="coords")
 
-    testArray = busFind.search(startarr, endarr, output="coords")
+    busArray = busFind.search(startarr, endarr, output="coords")
 
     latlong = []
+    busStr = "The buses you can take is: "
 
+    # if BestPathChoice == "walk":
     for row in pathArray:
         lat = row[1]
         long = row[0]
         newCoordinates = [float(long), float(lat)]
         latlong.append(newCoordinates)
 
+    if BestPathChoice == "bus":
+        print(startarr)
+        print(endarr)
+        print(busArray)
+        if busArray is not None:
+            for bus in range(len(busArray[0])):
+                busStr += (busArray[0][bus] + " ")
+
+        # for row in range(1,len(busArray)):
+        #     lat = row[1]
+        #     long = row[0]
+        #     newCoordinates = [float(long), float(lat)]
+        #     latlong.append(newCoordinates)
+
+    print (busStr)
+
     latlong.insert(0,startarr)
     latlong.append(endarr)
     #print(startarr)
     #print(endarr)
     #print(latlong)
-    print(testArray)
+    #print(busArray)
 
     data = latlong
     #print(latlong)
@@ -56,7 +74,7 @@ def home_page():
     #print(geoDict2)
 
     return render_template('home.html', form=form, methods=['GET'], path=BestPathChoice, station=MRTLRTLocation,
-                           hdb=HDBLocation, data=data)
+                           hdb=HDBLocation, data=data,busServices = busStr)
 
 
 

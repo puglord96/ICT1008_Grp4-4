@@ -22,7 +22,7 @@ body {
 }
 
 .marker {
-    background-image: url('markerOrange.png');
+    background-image: url('marker.png');
     background-size: cover;
     width: 20px;
     height: 20px;
@@ -33,6 +33,16 @@ body {
 
 .marker1 {
     background-image: url('markerRed.png');
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    left: 2.2%;
+}
+
+.marker2 {
+    background-image: url('markerOrange.png');
     background-size: cover;
     width: 20px;
     height: 20px;
