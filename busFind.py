@@ -170,24 +170,25 @@ def search(start, end, output="graph"):
             newNode = Node(position=IDtoCoord(i[1]), parent=currentNode)
             children.append(newNode)
         #consider possible paths generated from children
-        for child in children:
-            #bus service unavailable in final node, skip
-            endServices = endNode.services.split(',')
-            childServices = child.services.split(',')
-            servicesCheck = list(set(endServices).intersection(childServices))
-            if len(servicesCheck) <= 0:
-                continue
-            #child already visited, skip
-            if skipNode(child, traversedList) == -1:
-                continue
-            child.g = currentNode.g + (1/28) # Average bus speed is 28km/h
-            child.h = haversine(startNode.getLat(), startNode.getLon(), child.getLat(), child.getLon())
-            child.f = child.g + child.h
-            #child already noted, skip
-            if skipNode(child, untraversedList) == -1:
-                continue
-            # Add the child to list to travel to
-            heapq.heappush(untraversedList, child)
+            # consider possible paths generated from children
+            for child in children:
+                # bus service unavailable in final node, skip
+                endServices = endNode.services.split(',')
+                childServices = child.services.split(',')
+                servicesCheck = list(set(endServices).intersection(childServices))
+                if len(servicesCheck) <= 0:
+                    continue
+                # child already visited, skip
+                if skipNode(child, traversedList) == -1:
+                    continue
+                child.g = currentNode.g + (1 / 28)  # Average bus speed is 28km/h
+                child.h = haversine(startNode.getLat(), startNode.getLon(), child.getLat(), child.getLon())
+                child.f = child.g + child.h
+                # child already noted, skip
+                if skipNode(child, untraversedList) == -1:
+                    continue
+                # Add the child to list to travel to
+                heapq.heappush(untraversedList, child)
     #could not reach destination
     print("Unable to find route")
     return None

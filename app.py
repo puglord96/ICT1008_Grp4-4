@@ -32,23 +32,35 @@ def home_page():
 
     pathArray = pathFind.search(startarr, endarr, output="coords")
 
-    testArray = busFind.search(startarr, endarr, output="coords")
+    busArray = busFind.search(startarr, endarr, output="coords")
 
     latlong = []
 
-    for row in pathArray:
-        lat = row[1]
-        long = row[0]
-        newCoordinates = [float(long), float(lat)]
-        latlong.append(newCoordinates)
+    if BestPathChoice == "walk":
+        for row in pathArray:
+            lat = row[1]
+            long = row[0]
+            newCoordinates = [float(long), float(lat)]
+            latlong.append(newCoordinates)
 
-    latlong.insert(0,startarr)
-    latlong.append(endarr)
+        latlong.insert(0,startarr)
+        latlong.append(endarr)
+    elif BestPathChoice == "bus":
+        if busArray is not None:
+            for row in busArray[1:]:
+                lat = row[0]
+                long = row[1]
+                newCoordinates = [float(long), float(lat)]
+                latlong.append(newCoordinates)
+
+            latlong.insert(0,startarr)
+            latlong.append(endarr)
     #print(startarr)
     #print(endarr)
     #print(latlong)
-    print(testArray)
-
+    #print(testArray)
+    print(busArray)
+    print(latlong)
     data = latlong
     #print(latlong)
     #print("here")
