@@ -34,16 +34,21 @@ def home_page():
 
     busArray = busFind.search(startarr, endarr, output="coords")
 
+<<<<<<< HEAD
     latlong = []
     busStr = "The buses you can take is: "
+=======
+    latlong2 = []
+>>>>>>> parent of 3ee7794... added path to the algorithm
 
     # if BestPathChoice == "walk":
     for row in pathArray:
         lat = row[1]
         long = row[0]
         newCoordinates = [float(long), float(lat)]
-        latlong.append(newCoordinates)
+        latlong2.append(newCoordinates)
 
+<<<<<<< HEAD
     if BestPathChoice == "bus":
         print(startarr)
         print(endarr)
@@ -66,8 +71,13 @@ def home_page():
     #print(endarr)
     #print(latlong)
     #print(busArray)
+=======
 
-    data = latlong
+    print(latlong2)
+>>>>>>> parent of 3ee7794... added path to the algorithm
+
+
+    data = latlong2
     #print(latlong)
     #print("here")
     #cleanData(data)

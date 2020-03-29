@@ -104,7 +104,11 @@ map.on('load', function () {
             'properties': {color: "#ffffff"},
             'geometry': {
                 'type': 'LineString',
-                'coordinates': data
+                'coordinates': [
+                    [103.9072, 1.3984],
+                    [103.8984397, 1.4090686],
+                    [103.9158001,1.3945725]
+                ]
             }
         }
     });
