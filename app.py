@@ -32,18 +32,14 @@ def home_page():
 
     pathArray = pathFind.search(startarr, endarr, output="coords")
 
+
     busArray = busFind.search(startarr, endarr, output="coords")
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+    latlong2 = []
+
     latlong = []
     busStr = "The buses you can take is: "
-=======
-    latlong2 = []
->>>>>>> parent of 3ee7794... added path to the algorithm
-=======
-    latlong2 = []
->>>>>>> parent of 3ee7794... added path to the algorithm
+
 
     # if BestPathChoice == "walk":
     for row in pathArray:
@@ -51,9 +47,7 @@ def home_page():
         long = row[0]
         newCoordinates = [float(long), float(lat)]
         latlong2.append(newCoordinates)
-<<<<<<< HEAD
 
-<<<<<<< HEAD
     if BestPathChoice == "bus":
         print(startarr)
         print(endarr)
@@ -68,7 +62,7 @@ def home_page():
         #     newCoordinates = [float(long), float(lat)]
         #     latlong.append(newCoordinates)
 
-    print (busStr)
+    #print (busStr)
 
     latlong.insert(0,startarr)
     latlong.append(endarr)
@@ -76,20 +70,15 @@ def home_page():
     #print(endarr)
     #print(latlong)
     #print(busArray)
-=======
 
-    print(latlong2)
->>>>>>> parent of 3ee7794... added path to the algorithm
-=======
-
->>>>>>> parent of 3ee7794... added path to the algorithm
 
     print(latlong2)
 
-<<<<<<< HEAD
-=======
 
->>>>>>> parent of 3ee7794... added path to the algorithm
+
+
+
+
     data = latlong2
     #print(latlong)
     #print("here")
