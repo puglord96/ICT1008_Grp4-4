@@ -39,7 +39,7 @@ with open('datasets/punggol-hdb-latlong.csv') as csv_file:
 
 
 
-print(latlong)
+#print(latlong)
 
     #geojsonData = {"type": "Feature", "geometry": {"type": "Point", "coordinates": LL}}
     #geoDict.append(geojsonData)
