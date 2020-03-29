@@ -41,7 +41,10 @@ with open('datasets/punggol-hdb-latlong.csv') as csv_file:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 518218a... Added travelling by bus method and node color
 =======
 >>>>>>> parent of 518218a... Added travelling by bus method and node color
 print(latlong)
@@ -66,6 +69,9 @@ LLTest = [103.8998, 1.4075]
 
 # geojsonData = {"type": "Feature", "geometry": {"type": "Point", "coordinates": latlong}}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 518218a... Added travelling by bus method and node color
+=======
 >>>>>>> parent of 518218a... Added travelling by bus method and node color
 =======
 >>>>>>> parent of 518218a... Added travelling by bus method and node color

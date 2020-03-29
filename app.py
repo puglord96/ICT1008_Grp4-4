@@ -34,6 +34,7 @@ def home_page():
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     busArray = busFind.search(startarr, endarr, output="coords")
 =======
@@ -55,12 +56,19 @@ def home_page():
     latlong = []
 
 >>>>>>> parent of 518218a... Added travelling by bus method and node color
+=======
+    testArray = busFind.search(startarr, endarr, output="coords")
+
+    latlong = []
+
+>>>>>>> parent of 518218a... Added travelling by bus method and node color
     for row in pathArray:
         lat = row[1]
         long = row[0]
         newCoordinates = [float(long), float(lat)]
         latlong2.append(newCoordinates)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     if BestPathChoice == "bus":
@@ -83,12 +91,15 @@ def home_page():
 >>>>>>> parent of 518218a... Added travelling by bus method and node color
 =======
 >>>>>>> parent of 518218a... Added travelling by bus method and node color
+=======
+>>>>>>> parent of 518218a... Added travelling by bus method and node color
     latlong.insert(0,startarr)
     latlong.append(endarr)
     #print(startarr)
     #print(endarr)
     #print(latlong)
     print(testArray)
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 
@@ -98,6 +109,8 @@ def home_page():
 
 
 
+=======
+>>>>>>> parent of 518218a... Added travelling by bus method and node color
 =======
 >>>>>>> parent of 518218a... Added travelling by bus method and node color
 
