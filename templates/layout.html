@@ -42,12 +42,17 @@
            var hdb = "{{ hdb }}";
            var mrt = "{{ station }}";
            var data= {{ data }};
+           var busList = "{{ bus }}";
            var midArray, destArray;
 
 
         $("#BestPathChoice").val("{{ path }}");
         $("#MRTLocation").val(mrt);
         $("#HDBLocation").val(hdb);
+        $("#HDBLocation").val(hdb);
+        console.log(busList)
+        $("#pathinfo").val(busList);
+
 
     {#alert(hdb == "None");#}
     //If no selection of MRT station made, default map center will take coordinates of punggol

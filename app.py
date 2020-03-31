@@ -13,6 +13,9 @@ app.config['SECRET_KEY'] = '4cfbdadf2d991953407bb0942aa37e3a'
 @app.route('/')
 def home_page():
     form = MapForm()
+    global buslist, busliststr
+    global busStatus, choiceStatus
+    firststartup = True
     BestPathChoice = request.args.get('BestPathChoice')
     MRTLRTLocation = request.args.get('MRTLocation')
     HDBLocation = request.args.get('HDBLocation')
@@ -37,6 +40,8 @@ def home_page():
     latlong = []
 
     if BestPathChoice == "walk":
+        firststartup = False
+        choiceStatus = "walk"
         for row in pathArray:
             lat = row[1]
             long = row[0]
@@ -45,8 +50,14 @@ def home_page():
 
         latlong.insert(0,startarr)
         latlong.append(endarr)
+
     elif BestPathChoice == "bus":
+        firststartup = False
+        choiceStatus = "bus"
+        if busArray is None:
+            busStatus = False
         if busArray is not None:
+            busStatus = True
             for row in busArray[1:]:
                 lat = row[0]
                 long = row[1]
@@ -55,21 +66,36 @@ def home_page():
 
             latlong.insert(0,startarr)
             latlong.append(endarr)
-    #print(startarr)
-    #print(endarr)
-    #print(latlong)
-    #print(testArray)
-    print(busArray)
-    print(latlong)
+            buslist = busArray[0]
+            busliststr = "Bus services available: "
+            for b in buslist:
+                busliststr += b + ", "
+
+
+
+
     data = latlong
-    #print(latlong)
-    #print("here")
-    #cleanData(data)
-    #print(geoDict2)
 
-    return render_template('home.html', form=form, methods=['GET'], path=BestPathChoice, station=MRTLRTLocation,
-                           hdb=HDBLocation, data=data)
+    if firststartup is True:
+        nobusstr = ""
+        return render_template('home.html', form=form, methods=['GET'], path=BestPathChoice, station=MRTLRTLocation,
+                               hdb=HDBLocation, data=data, bus=nobusstr)
 
+    elif firststartup is False and choiceStatus == "walk":
+        nobusstr = ""
+        return render_template('home.html', form=form, methods=['GET'], path=BestPathChoice, station=MRTLRTLocation,
+                               hdb=HDBLocation, data=data, bus=nobusstr)
+
+    elif choiceStatus == "bus" and busStatus is False and firststartup is False:
+        busliststrNone = "No bus services available"
+        return render_template('home.html', form=form, methods=['GET'], path=BestPathChoice, station=MRTLRTLocation,
+                               hdb=HDBLocation, data=data, bus=busliststrNone)
+
+    elif choiceStatus == "bus" and busStatus is True and firststartup is False:
+        print("has value")
+        newbusliststr = busliststr[:-2]
+        return render_template('home.html', form=form, methods=['GET'], path=BestPathChoice, station=MRTLRTLocation,
+                               hdb=HDBLocation, data=data, bus=newbusliststr)
 
 
 if __name__ == '__main__':
