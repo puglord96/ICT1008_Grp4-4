@@ -14,7 +14,7 @@ would not be compatible
    
    Install by typing:
    
-   **pip install <the complete file name>**
+   **pip install 'the complete file name'**
    
 
 
