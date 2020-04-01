@@ -1,18 +1,31 @@
 # ICT1008_Grp4-4
 
-Installation
 
-1) Clone repo
-2) In pycharm, under 'file' click on open.
-3) Select project folder from wherever you saved from github
+Installation:
 
-Configuration
-1) Under 'file' click on 'settings'
-2) Click on project name select project interpreter to select version.
-3) Select version 3 and above
-4) Refer to the project files to install needed packages to run the file
+Take note: Please do make sure that your python version is ver 3.7.x. If not, the dependencies
+would not be compatible
 
-Upload
-1) Create a new branch from your github desktop.
-2) Push into your own branch for changes
-3) Once finalised, merge into master.
+1) Before running the program, please do install the dependencies found in the
+   pre-installation folder by running your command prompt/powershell in that 
+   folder.
+   
+   **Do install the fiona whl file at the very last**
+   
+   Install by typing:
+   
+   **pip install <the complete file name>**
+   
+
+
+2) After which, install the osmnx library before running the program
+
+	**pip install osmnx*
+	
+	
+
+Running Program:
+1) Open the whole project folder with your python IDE
+2) Run the app.py file
+
+

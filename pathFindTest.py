@@ -154,7 +154,7 @@ def AstarSearch(start, end, output="coords"):
         #found route to end node
         if ((currentNode.position[0] == endNode.position[0]) and (currentNode.position[1] == endNode.position[1])):
             print("A Star Performance:")
-            print("There are " +str(currentIterations)+ " iterations used")
+            print("There are " + str(currentIterations) + " iterations used")
             elapsed_time = time.process_time() - t
             print("Time taken for algorithm: " + str(elapsed_time) + " seconds")
 
@@ -291,19 +291,16 @@ def checkNodes(coords):
     return tempCoords[idx]
     
 
-"""
-test parameters
-"""
-#test start - 98 punggol walk
-#tempstart = (103.8983854, 1.4012395)
-#test end - punggol rd
-#tempend = (103.9057549, 1.401378)
+
+
+"""Performance comparision between A* and Dijkstra's Algorithm"""
 
 compareDataset=[
                 [(103.9086, 1.4051),(103.9125082, 1.4049542)],
                 [[103.9003211, 1.4118539],[103.9114139, 1.394025]],
                 [[103.898527, 1.408057],[103.90723, 1.403912]]
 ]
+
 compareCount = 0
 for compare in compareDataset:
     compareCount += 1
@@ -315,5 +312,3 @@ for compare in compareDataset:
     DijkstraSearch(compare[0], compare[1], output="coords")
     print("________________________________________________________________________________________________________")
 
-#tempstart = (103.9086, 1.4051)
-#tempend = (103.9125082, 1.4049542)

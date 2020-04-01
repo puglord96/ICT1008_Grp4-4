@@ -63,8 +63,7 @@ LLTest = [103.8998, 1.4075]
 
 class MapForm(FlaskForm):
     BestPathChoice = SelectField('Method of Travel', choices=[(0, 'Choose type of Path...'), ('walk', 'Walking the street'),
-                                                               ('bus', 'Bus'),
-                                                               ('mrt', 'Mrt')],
+                                                               ('bus', 'Bus')],
                                  validators=[DataRequired()])
     MRTLocation = SelectField('MRT/LRT Station', choices=[(station[0], station[1]) for station in MRTLRTStations],
                               validators=[DataRequired()])
