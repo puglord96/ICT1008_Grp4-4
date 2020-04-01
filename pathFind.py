@@ -2,7 +2,7 @@ import osmnx as ox
 import geopandas
 import pandas as pd
 import heapq
-from math import cos, asin, sqrt
+from math import radians, sin, cos, acos
 
 #read required data from files
 nodesData = pd.read_json(path_or_buf="datasets/nodesData.json")
@@ -177,9 +177,9 @@ def search(start, end, output="coords"):
 #Calculate distance between 2 lat and long points using the Haversine formula
 def haversine(lat1, long1, lat2, long2):
     #p = pi/180
-    p = 0.017453292519943295
-    a = 0.5 - cos((lat2 - lat1) * p)/2 + cos(lat1 * p) * cos(lat2 * p) * (1 - cos((long2 - long1) * p)) / 2
-    return 12742 * asin(sqrt(a))
+    # p = 0.017453292519943295
+    # a = 0.5 - cos((lat2 - lat1) * p)/2 + cos(lat1 * p) * cos(lat2 * p) * (1 - cos((long2 - long1) * p)) / 2
+    return 6371.01 * acos(sin(lat1)*sin(lat2) + cos(lat1)*cos(lat2)*cos(long1 - long2))
 
 #return a tuple of coordinates provided by the ID (Longitude, Latitude)
 def IDtoCoord(ID):

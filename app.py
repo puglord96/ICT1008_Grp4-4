@@ -35,8 +35,9 @@ def home_page():
 
     pathArray = pathFind.search(startarr, endarr, output="coords")
 
-    busArray = busFind.search(startarr, endarr, output="coords")
+    busArray = busFind.search(startarr, endarr)
 
+    #print(busArray)
     latlong = []
 
     if BestPathChoice == "walk":
@@ -59,8 +60,9 @@ def home_page():
         if busArray is not None:
             busStatus = True
             for row in busArray[1:]:
-                lat = row[0]
-                long = row[1]
+                lat = row[0][1]
+                long = row[0][0]
+                #print(long)
                 newCoordinates = [float(long), float(lat)]
                 latlong.append(newCoordinates)
 
@@ -72,7 +74,7 @@ def home_page():
                 busliststr += b + ", "
 
 
-
+    print(latlong)
 
     data = latlong
 
